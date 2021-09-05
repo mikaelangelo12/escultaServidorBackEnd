@@ -16,7 +16,7 @@ func main(){
 //Função responsavel por imprimir o Menu
 func exibeMenu(){
 	fmt.Println("[1] - Esculta Servidor Local")
-	fmt.Println("[2] - Esculta Varios Servidor")
+	fmt.Println("[2] - Esculta Varios Servidores")
 	fmt.Println("[3] - Servidor Internet")
 	fmt.Println("[0] - Sair")		
 	fmt.Println(" ")
