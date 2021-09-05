@@ -8,7 +8,7 @@ func main(){
 }
 func exibeMenu(){
 	fmt.Println("1 - Esculta Servidor Local")
-	fmt.Println("2 - Verificar logs")
+	fmt.Println("2 - Esculta Varios Servidor")
 	fmt.Println("3 - Servidor Internet")
 	fmt.Println("0 - Sair")
 }
@@ -25,9 +25,9 @@ func logicaProg(){
 		case 1:
 			servidorLocal()
 		case 2:
-			fmt.Println("Rodando 2")
+			multServerLocal()
 		case 3:
-			fmt.Println("Rodando 3")
+			fmt.Println("EmBreve")
 		}
 
 }
@@ -36,10 +36,27 @@ func servidorLocal(){
 		servidor := "https://edmy.com.br"
 		engineServer, _ := http.Get(servidor)
 		if engineServer.StatusCode == 200 {
-			fmt.Println(servidor, "Seu Servidor esta rodando com sucesso!", engineServer.StatusCode)
 			fmt.Println("Finalizar o monitoramento Ctrl + C")
+			fmt.Println(servidor, "Seu Servidor esta rodando com sucesso!", engineServer.StatusCode)
+
 		}else {
 			fmt.Println("Seu Servidor", servidor, "Não esta funcionando. Status Code: ", engineServer.StatusCode)
+		}
+	}
+}
+func multServerLocal(){
+	servidores :=[]string{"https://edmy.com.br", "http://brotofm.com.br", "http://mikaelangelo.tech"}
+	for{
+		for i:=0; i<len(servidores); i++{
+			servidoresLocal, _ := http.Get(servidores[i])
+
+			if servidoresLocal.StatusCode == 200 {
+				fmt.Println("Finalizar o monitoramento Ctrl + C")				
+				fmt.Println(servidores[i], "Seu Servidor esta rodando com sucesso!", servidoresLocal.StatusCode)
+
+			}else {
+				fmt.Println("Seu Servidor", servidores[i], "Não esta funcionando. Status Code: ", servidoresLocal.StatusCode)
+			}
 		}
 	}
 }
