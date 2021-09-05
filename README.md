@@ -20,5 +20,7 @@
 #### 1 - primeiro instalar o GOLang
 #### 2 - entra no terminal onde está o programa
 #### 3 - execultar no terminal go run meubackend.go
+<hr/>
+Versão 1.0
 
 
