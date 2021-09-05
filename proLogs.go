@@ -3,16 +3,17 @@ package main
 import "fmt"
 import "net/http"
 import "os"
-
+//Função Principal do Programa
 func main(){
 	fmt.Println(" ")
-	fmt.Println("Bem Vindo ao Programa Logs")
+	fmt.Println("Bem Vindo ao Programa Pro Logs")
 	fmt.Println(" ")
 	for{
 		exibeMenu()
 		logicaProg()	
 	}
 }
+//Função responsavel por imprimir o Menu
 func exibeMenu(){
 	fmt.Println("[1] - Esculta Servidor Local")
 	fmt.Println("[2] - Esculta Varios Servidor")
@@ -23,12 +24,14 @@ func exibeMenu(){
 	fmt.Println(" ")
 	fmt.Println("Digite Sua Opção Aqui Em Baixo:")
 }
+//Função responsavel por execultar os dados do Menu
 func retornaDados()  int {
 	var retornaComando int
 	fmt.Scan(&retornaComando)
 	fmt.Println("Você digitou o numero: ", retornaComando)
 	return retornaComando
 }
+//Função Responsavel por tomar decisão do Menu
 func logicaProg(){
 	engine := retornaDados()
 
@@ -47,8 +50,10 @@ func logicaProg(){
 		}
 
 }
+//Função responsavel acessar o servidor e mostrar os Logs
 func servidorLocal(){
 	for{		
+		//Coloca Aqui o link do seu servidor Local ou servidor em produção
 		servidor := "https://edmy.com.br"
 		engineServer, _ := http.Get(servidor)
 
@@ -61,6 +66,7 @@ func servidorLocal(){
 		}
 	}
 }
+//Função responsavel por acessar em um array varios servidor e mostra logs de cada um
 func multServerLocal(){
 	servidores :=[]string{"https://edmy.com.br", "http://brotofm.com.br", "http://mikaelangelo.tech"}
 	for{
