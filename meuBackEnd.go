@@ -1,9 +1,10 @@
 package main
 import "fmt"
+import "net/http"
 
 func main(){
 	exibeMenu()
-	logicaProg()
+	logicaProg()	
 }
 func exibeMenu(){
 	fmt.Println("1 - Esculta Servidor Local")
@@ -22,11 +23,23 @@ func logicaProg(){
 
 		switch engine{
 		case 1:
-			fmt.Println("Rodando 1")
+			servidorLocal()
 		case 2:
 			fmt.Println("Rodando 2")
 		case 3:
 			fmt.Println("Rodando 3")
 		}
 
+}
+func servidorLocal(){
+	for{
+		servidor := "https://edmy.com.br"
+		engineServer, _ := http.Get(servidor)
+		if engineServer.StatusCode == 200 {
+			fmt.Println(servidor, "Seu Servidor esta rodando com sucesso!", engineServer.StatusCode)
+			fmt.Println("Finalizar o monitoramento Ctrl + C")
+		}else {
+			fmt.Println("Seu Servidor", servidor, "Não esta funcionando. Status Code: ", engineServer.StatusCode)
+		}
+	}
 }
