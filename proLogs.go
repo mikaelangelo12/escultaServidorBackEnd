@@ -1,8 +1,13 @@
 //copyright © 2021 | By Mikael Angelo
 package main
-import "fmt"
-import "net/http"
-import "os"
+import(
+	"fmt"
+	"net/http"
+	"os"
+)
+
+const daley = 5
+
 //Função Principal do Programa
 func main(){
 	fmt.Println(" ")
@@ -64,6 +69,7 @@ func servidorLocal(){
 		}else {
 			fmt.Println("Seu Servidor", servidor, "Não esta funcionando. Status Code: ", engineServer.StatusCode)
 		}
+		time.Sleep(delay * time.Second)
 	}
 }
 //Função responsavel por acessar em um array varios servidor e mostra logs de cada um
@@ -81,5 +87,6 @@ func multServerLocal(){
 				fmt.Println("Seu Servidor", servidores[i], "Não esta funcionando. Status Code: ", servidoresLocal.StatusCode)
 			}
 		}
+		time.Sleep(delay * time.Second)
 	}
 }
