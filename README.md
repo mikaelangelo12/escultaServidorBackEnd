@@ -7,7 +7,7 @@
 #### Bem Vindo ao Programa Pro Logs
  
 #### [1] - Esculta Servidor Local
-#### [2] - Esculta Varios Servidor
+#### [2] - Esculta Varios Servidores
 #### [3] - Servidor Internet
 #### [0] - Sair
  
