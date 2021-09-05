@@ -1,6 +1,7 @@
 package main
 import "fmt"
 import "net/http"
+import "os"
 
 func main(){
 	exibeMenu()
@@ -28,6 +29,9 @@ func logicaProg(){
 			multServerLocal()
 		case 3:
 			fmt.Println("EmBreve")
+			os.Exit(0)
+		default:
+			os.Exit(-1)
 		}
 
 }
