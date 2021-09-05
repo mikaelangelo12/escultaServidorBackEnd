@@ -6,7 +6,7 @@ import(
 	"os"
 )
 
-const daley = 5
+const deley = 5
 
 //Função Principal do Programa
 func main(){
