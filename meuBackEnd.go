@@ -1,17 +1,27 @@
+//copyright © 2021 | By Mikael Angelo
 package main
 import "fmt"
 import "net/http"
 import "os"
 
 func main(){
-	exibeMenu()
-	logicaProg()	
+	fmt.Println(" ")
+	fmt.Println("Bem Vindo ao Programa Logs")
+	fmt.Println(" ")
+	for{
+		exibeMenu()
+		logicaProg()	
+	}
 }
 func exibeMenu(){
-	fmt.Println("1 - Esculta Servidor Local")
-	fmt.Println("2 - Esculta Varios Servidor")
-	fmt.Println("3 - Servidor Internet")
-	fmt.Println("0 - Sair")
+	fmt.Println("[1] - Esculta Servidor Local")
+	fmt.Println("[2] - Esculta Varios Servidor")
+	fmt.Println("[3] - Servidor Internet")
+	fmt.Println("[0] - Sair")		
+	fmt.Println(" ")
+	fmt.Println("Copyright © 2021 | By Mikael Angelo")
+	fmt.Println(" ")
+	fmt.Println("Digite Sua Opção Aqui Em Baixo:")
 }
 func retornaDados()  int {
 	var retornaComando int
@@ -29,6 +39,8 @@ func logicaProg(){
 			multServerLocal()
 		case 3:
 			fmt.Println("EmBreve")
+		case 0:
+			fmt.Println("Ate mais!")
 			os.Exit(0)
 		default:
 			os.Exit(-1)
@@ -36,9 +48,10 @@ func logicaProg(){
 
 }
 func servidorLocal(){
-	for{
+	for{		
 		servidor := "https://edmy.com.br"
 		engineServer, _ := http.Get(servidor)
+
 		if engineServer.StatusCode == 200 {
 			fmt.Println("Finalizar o monitoramento Ctrl + C")
 			fmt.Println(servidor, "Seu Servidor esta rodando com sucesso!", engineServer.StatusCode)
