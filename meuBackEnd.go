@@ -10,3 +10,9 @@ func exibeMenu(){
 	fmt.Println("3 - Servidor Internet")
 	fmt.Println("0 - Sair")
 }
+func retornaDados()  int {
+	var retornaComando int
+	fmt.Scan(&retornaComando)
+	fmt.Println("Você digitou o numero: ", retornaComando)
+	return retornaComando
+}
